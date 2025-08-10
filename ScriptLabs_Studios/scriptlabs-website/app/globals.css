@@ -26,7 +26,7 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-white text-slate-900 antialiased;
   }
 
   /* Custom scrollbar */
@@ -36,33 +36,33 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-silver-code/10;
+    @apply bg-slate-300/10;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-electric-blue/50 rounded-full;
+    @apply bg-blue-500/50 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-electric-blue;
+    @apply bg-blue-500;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-electric-blue text-white font-semibold rounded-lg hover:bg-electric-blue/90 transition-all duration-200 transform hover:scale-105;
+    @apply px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200 transform hover:scale-105;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-neural-purple text-white font-semibold rounded-lg hover:bg-neural-purple/90 transition-all duration-200 transform hover:scale-105;
+    @apply px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-200 transform hover:scale-105;
   }
 
   .btn-outline {
-    @apply px-6 py-3 border-2 border-electric-blue text-electric-blue font-semibold rounded-lg hover:bg-electric-blue hover:text-white transition-all duration-200;
+    @apply px-6 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-200;
   }
 
   .gradient-text {
-    @apply bg-hero-gradient bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-green-500 bg-clip-text text-transparent;
   }
 
   .section-padding {

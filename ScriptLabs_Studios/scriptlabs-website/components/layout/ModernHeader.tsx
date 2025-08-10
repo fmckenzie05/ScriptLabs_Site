@@ -160,11 +160,11 @@ export default function ModernHeader() {
           sx={{
             background: scrolled 
               ? 'rgba(255, 255, 255, 0.95)' 
-              : 'rgba(255, 255, 255, 0.1)',
+              : 'rgba(249, 250, 251, 0.8)',
             backdropFilter: 'blur(20px)',
             borderBottom: scrolled 
               ? '1px solid rgba(0, 0, 0, 0.08)' 
-              : '1px solid rgba(255, 255, 255, 0.1)',
+              : '1px solid rgba(229, 231, 235, 0.3)',
             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
@@ -196,7 +196,7 @@ export default function ModernHeader() {
                     fontWeight: 900, 
                     background: scrolled 
                       ? 'linear-gradient(135deg, #0066FF 0%, #6B46C1 100%)'
-                      : 'linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%)',
+                      : 'linear-gradient(135deg, #374151 0%, #111827 100%)',
                     backgroundClip: 'text',
                     WebkitBackgroundClip: 'text',
                     color: 'transparent',
@@ -216,8 +216,8 @@ export default function ModernHeader() {
                   component={Link}
                   href={item.href}
                   sx={{
-                    color: scrolled ? '#0F172A' : 'white',
-                    fontWeight: 500,
+                    color: scrolled ? '#0F172A' : '#374151',
+                    fontWeight: 600,
                     fontSize: '1rem',
                     textTransform: 'none',
                     py: 1,
@@ -228,7 +228,7 @@ export default function ModernHeader() {
                       color: '#0066FF',
                       background: scrolled 
                         ? 'rgba(0, 102, 255, 0.1)' 
-                        : 'rgba(255, 255, 255, 0.1)',
+                        : 'rgba(55, 65, 81, 0.15)',
                       transform: 'translateY(-1px)',
                     }
                   }}
@@ -248,8 +248,8 @@ export default function ModernHeader() {
                   borderRadius: '50px',
                   px: 3,
                   py: 1,
-                  borderColor: scrolled ? '#0066FF' : 'rgba(255, 255, 255, 0.3)',
-                  color: scrolled ? '#0066FF' : 'white',
+                  borderColor: scrolled ? '#0066FF' : '#6B7280',
+                  color: scrolled ? '#0066FF' : '#374151',
                   fontWeight: 500,
                   '&:hover': {
                     borderColor: '#0066FF',
@@ -293,7 +293,7 @@ export default function ModernHeader() {
               onClick={handleDrawerToggle}
               sx={{ 
                 display: { md: 'none' },
-                color: scrolled ? '#0F172A' : 'white',
+                color: scrolled ? '#0F172A' : '#374151',
               }}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}

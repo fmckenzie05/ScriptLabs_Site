@@ -2,23 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { 
-  Container, 
-  Typography, 
-  Grid, 
-  Card, 
-  CardContent, 
-  CardMedia,
-  Box, 
-  Stack, 
-  Chip,
-  Button,
-  Tabs,
-  Tab,
-  Fade,
-  Slide
-} from '@mui/material'
-import { ArrowRight, ExternalLink, Github, Award, Users, Calendar } from 'lucide-react'
+import { ArrowRight, ExternalLink, Award, Star, Calendar, Users, TrendingUp, Sparkles } from 'lucide-react'
 
 const categories = ['All', 'Web Apps', 'Mobile Apps', 'AI/ML', 'Web3', 'SaaS']
 
@@ -27,61 +11,97 @@ const projects = [
     id: 1,
     title: 'FinanceAI Pro',
     category: 'AI/ML',
-    description: 'AI-powered financial analytics platform with predictive modeling',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-    technologies: ['Python', 'TensorFlow', 'React', 'AWS'],
-    stats: { users: '50K+', accuracy: '97%', revenue: '$2.5M' },
-    color: '#0066FF',
+    description: 'AI-powered financial analytics platform with predictive modeling and real-time insights',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    technologies: ['Python', 'TensorFlow', 'React', 'AWS', 'PostgreSQL'],
+    results: [
+      '97% prediction accuracy',
+      '$2.5M revenue generated',
+      '50K+ active users'
+    ],
+    timeline: '8 months',
+    featured: true,
+    gradient: 'from-blue-500 to-cyan-500',
   },
   {
     id: 2,
     title: 'HealthTrack Mobile',
     category: 'Mobile Apps',
-    description: 'Cross-platform health monitoring app with real-time analytics',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop',
-    technologies: ['Flutter', 'Firebase', 'Node.js', 'MongoDB'],
-    stats: { downloads: '100K+', rating: '4.8', countries: '25' },
-    color: '#6B46C1',
+    description: 'Cross-platform health monitoring app with real-time analytics and IoT integration',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop',
+    technologies: ['Flutter', 'Firebase', 'Node.js', 'MongoDB', 'IoT'],
+    results: [
+      '100K+ downloads',
+      '4.8/5 app store rating',
+      '25 countries launched'
+    ],
+    timeline: '6 months',
+    featured: true,
+    gradient: 'from-purple-500 to-pink-500',
   },
   {
     id: 3,
     title: 'DeFi Exchange Platform',
     category: 'Web3',
-    description: 'Decentralized exchange with automated market making',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&h=400&fit=crop',
-    technologies: ['Solidity', 'Web3.js', 'React', 'Ethereum'],
-    stats: { tvl: '$10M+', trades: '500K+', users: '15K' },
-    color: '#10B981',
+    description: 'Decentralized exchange with automated market making and advanced trading features',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop',
+    technologies: ['Solidity', 'Web3.js', 'React', 'Ethereum', 'IPFS'],
+    results: [
+      '$10M+ total value locked',
+      '500K+ trades executed',
+      '15K active traders'
+    ],
+    timeline: '12 months',
+    featured: true,
+    gradient: 'from-green-500 to-emerald-500',
   },
   {
     id: 4,
     title: 'E-Commerce Revolution',
     category: 'Web Apps',
-    description: 'Next-gen e-commerce platform with AI recommendations',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-    technologies: ['Next.js', 'Stripe', 'PostgreSQL', 'Redis'],
-    stats: { gmv: '$5M+', merchants: '500+', conversion: '8.5%' },
-    color: '#F59E0B',
+    description: 'Next-generation e-commerce platform with AI recommendations and seamless checkout',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
+    technologies: ['Next.js', 'Stripe', 'PostgreSQL', 'Redis', 'AWS'],
+    results: [
+      '$5M+ gross merchandise',
+      '500+ active merchants',
+      '8.5% conversion rate'
+    ],
+    timeline: '10 months',
+    featured: false,
+    gradient: 'from-orange-500 to-red-500',
   },
   {
     id: 5,
     title: 'TeamCollab SaaS',
     category: 'SaaS',
-    description: 'Enterprise collaboration platform with AI-powered insights',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop',
-    technologies: ['Vue.js', 'GraphQL', 'Kubernetes', 'AWS'],
-    stats: { teams: '1K+', messages: '10M+', uptime: '99.99%' },
-    color: '#EC4899',
+    description: 'Enterprise collaboration platform with AI-powered insights and workflow automation',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
+    technologies: ['Vue.js', 'GraphQL', 'Kubernetes', 'AWS', 'AI'],
+    results: [
+      '1K+ teams using',
+      '10M+ messages sent',
+      '99.99% uptime'
+    ],
+    timeline: '14 months',
+    featured: false,
+    gradient: 'from-indigo-500 to-purple-500',
   },
   {
     id: 6,
     title: 'SmartCity IoT',
     category: 'AI/ML',
-    description: 'IoT platform for smart city infrastructure management',
-    image: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=600&h=400&fit=crop',
-    technologies: ['Python', 'IoT', 'React', 'TimescaleDB'],
-    stats: { devices: '10K+', cities: '5', savings: '$1M+' },
-    color: '#EF4444',
+    description: 'IoT platform for smart city infrastructure management with predictive maintenance',
+    image: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&h=600&fit=crop',
+    technologies: ['Python', 'IoT', 'React', 'TimescaleDB', 'ML'],
+    results: [
+      '10K+ devices connected',
+      '5 cities deployed',
+      '$1M+ cost savings'
+    ],
+    timeline: '16 months',
+    featured: false,
+    gradient: 'from-teal-500 to-cyan-500',
   },
 ]
 
@@ -92,255 +112,250 @@ export default function PortfolioPage() {
     ? projects 
     : projects.filter(p => p.category === activeCategory)
 
+  const featuredProjects = projects.filter(p => p.featured)
+
   return (
-    <Box sx={{ pt: 12, pb: 8, minHeight: '100vh' }}>
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <Box
-        sx={{
-          background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-          py: 12,
-          mb: 8,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Stack spacing={3} alignItems="center" textAlign="center">
-            <Fade in timeout={600}>
-              <Chip
-                icon={<Award size={16} />}
-                label="Our Work"
-                sx={{
-                  px: 3,
-                  py: 1,
-                  background: 'rgba(0, 102, 255, 0.1)',
-                  border: '1px solid rgba(0, 102, 255, 0.3)',
-                  color: '#0066FF',
-                  fontWeight: 600,
-                }}
-              />
-            </Fade>
-            
-            <Slide direction="up" in timeout={800}>
-              <Typography
-                variant="h1"
-                sx={{
-                  fontSize: { xs: '3rem', md: '4rem' },
-                  fontWeight: 900,
-                  color: 'white',
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                Portfolio Showcase
-              </Typography>
-            </Slide>
-            
-            <Fade in timeout={1000}>
-              <Typography
-                sx={{
-                  fontSize: '1.3rem',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  maxWidth: '700px',
-                }}
-              >
-                Explore our collection of groundbreaking projects that have transformed 
-                businesses and redefined industries.
-              </Typography>
-            </Fade>
-          </Stack>
-        </Container>
-      </Box>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full text-blue-700 font-medium mb-6">
+            <Award className="w-4 h-4" />
+            Our Portfolio
+          </div>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
+            Success{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Stories
+            </span>
+            <br />
+            That Inspire
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore our collection of groundbreaking projects that have transformed 
+            businesses and redefined industries through innovative technology solutions.
+          </p>
+        </div>
+      </section>
 
-      <Container maxWidth="lg">
-        {/* Category Tabs */}
-        <Box sx={{ mb: 6, display: 'flex', justifyContent: 'center' }}>
-          <Tabs
-            value={activeCategory}
-            onChange={(e, newValue) => setActiveCategory(newValue)}
-            variant="scrollable"
-            scrollButtons="auto"
-            sx={{
-              '& .MuiTab-root': {
-                fontWeight: 600,
-                fontSize: '1rem',
-                textTransform: 'none',
-                mx: 1,
-                borderRadius: '50px',
-                px: 3,
-                transition: 'all 0.3s',
-                '&.Mui-selected': {
-                  background: 'linear-gradient(135deg, #0066FF 0%, #6B46C1 100%)',
-                  color: 'white',
-                },
-              },
-              '& .MuiTabs-indicator': {
-                display: 'none',
-              },
-            }}
-          >
-            {categories.map((category) => (
-              <Tab key={category} label={category} value={category} />
-            ))}
-          </Tabs>
-        </Box>
-
-        {/* Projects Grid */}
-        <Grid container spacing={4}>
-          {filteredProjects.map((project, index) => (
-            <Grid size={{ xs: 12, md: 6, lg: 4 }} key={project.id}>
-              <Fade in timeout={800 + index * 100}>
-                <Card
-                  sx={{
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: '20px',
-                    overflow: 'hidden',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    '&:hover': {
-                      transform: 'translateY(-8px)',
-                      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
-                      '& .project-overlay': {
-                        opacity: 1,
-                      },
-                      '& img': {
-                        transform: 'scale(1.1)',
-                      }
-                    }
-                  }}
-                >
-                  {/* Image */}
-                  <Box sx={{ position: 'relative', overflow: 'hidden' }}>
-                    <CardMedia
-                      component="img"
-                      height="240"
-                      image={project.image}
+      {/* Featured Projects */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+            <p className="text-xl text-gray-600">Our most impactful solutions</p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+            {featuredProjects.map((project, index) => (
+              <div key={project.id} className={`${index === 0 ? 'lg:col-span-2 lg:row-span-2' : ''} group`}>
+                <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
                       alt={project.title}
-                      sx={{
-                        transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                      }}
+                      className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
+                        index === 0 ? 'h-80' : 'h-48'
+                      }`}
                     />
-                    <Box
-                      className="project-overlay"
-                      sx={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        background: `linear-gradient(135deg, ${project.color}CC, ${project.color}66)`,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: 2,
-                        opacity: 0,
-                        transition: 'opacity 0.3s',
-                      }}
-                    >
-                      <Button
-                        variant="contained"
-                        sx={{
-                          background: 'white',
-                          color: project.color,
-                          '&:hover': {
-                            background: 'white',
-                            transform: 'scale(1.05)',
-                          }
-                        }}
-                      >
-                        View Case Study
-                      </Button>
-                    </Box>
-                    <Chip
-                      label={project.category}
-                      sx={{
-                        position: 'absolute',
-                        top: 16,
-                        left: 16,
-                        background: 'rgba(255, 255, 255, 0.95)',
-                        fontWeight: 600,
-                        color: project.color,
-                      }}
-                    />
-                  </Box>
-
-                  <CardContent sx={{ p: 3, flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-                    {/* Title & Description */}
-                    <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <button className="w-full bg-white text-gray-900 py-3 px-6 rounded-xl font-medium hover:bg-gray-100 transition-colors">
+                          View Case Study
+                        </button>
+                      </div>
+                    </div>
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-white bg-opacity-90 text-gray-900 px-3 py-1 rounded-full text-sm font-medium">
+                        {project.category}
+                      </span>
+                    </div>
+                    {project.featured && (
+                      <div className="absolute top-4 right-4">
+                        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                          <Star className="w-3 h-3 fill-current" />
+                          Featured
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className={`p-6 ${index === 0 ? 'lg:p-8' : ''}`}>
+                    <h3 className={`font-bold text-gray-900 mb-3 ${index === 0 ? 'text-2xl' : 'text-xl'}`}>
                       {project.title}
-                    </Typography>
-                    <Typography sx={{ color: 'text.secondary', mb: 3, flexGrow: 1 }}>
+                    </h3>
+                    <p className={`text-gray-600 mb-4 ${index === 0 ? 'text-lg' : 'text-base'}`}>
                       {project.description}
-                    </Typography>
+                    </p>
+                    
+                    <div className="mb-4">
+                      <div className="text-sm font-medium text-gray-900 mb-2">Key Results:</div>
+                      <div className="space-y-1">
+                        {project.results.map((result, idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                            <TrendingUp className="w-4 h-4 text-green-500 flex-shrink-0" />
+                            {result}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <Calendar className="w-4 h-4" />
+                        {project.timeline}
+                      </div>
+                      <div className="flex gap-2">
+                        {project.technologies.slice(0, 3).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 3 && (
+                          <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium">
+                            +{project.technologies.length - 3}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                    {/* Technologies */}
-                    <Stack direction="row" flexWrap="wrap" gap={1} sx={{ mb: 3 }}>
-                      {project.technologies.map((tech) => (
-                        <Chip
+      {/* All Projects */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">All Projects</h2>
+            <p className="text-xl text-gray-600">Explore our complete portfolio</p>
+          </div>
+
+          {/* Category Filter */}
+          <div className="flex justify-center mb-12">
+            <div className="bg-white rounded-2xl p-2 shadow-lg">
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setActiveCategory(category)}
+                    className={`px-6 py-3 rounded-xl font-medium transition-all ${
+                      activeCategory === category
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {filteredProjects.map((project) => (
+              <div
+                key={project.id}
+                className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 group"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <button className="w-full bg-white text-gray-900 py-2 px-4 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                        View Details
+                      </button>
+                    </div>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white bg-opacity-90 text-gray-900 px-3 py-1 rounded-full text-sm font-medium">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
+
+                  <div className="mb-4">
+                    <div className="text-sm font-medium text-gray-900 mb-2">Impact:</div>
+                    <div className="space-y-1">
+                      {project.results.slice(0, 2).map((result, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full flex-shrink-0"></div>
+                          {result}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <Calendar className="w-4 h-4" />
+                      {project.timeline}
+                    </div>
+                    <div className="flex gap-1">
+                      {project.technologies.slice(0, 2).map((tech) => (
+                        <span
                           key={tech}
-                          label={tech}
-                          size="small"
-                          sx={{
-                            background: `${project.color}10`,
-                            color: project.color,
-                            fontWeight: 500,
-                          }}
-                        />
+                          className="px-2 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium"
+                        >
+                          {tech}
+                        </span>
                       ))}
-                    </Stack>
+                      {project.technologies.length > 2 && (
+                        <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-md text-xs font-medium">
+                          +{project.technologies.length - 2}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                    {/* Stats */}
-                    <Grid container spacing={2}>
-                      {Object.entries(project.stats).map(([key, value]) => (
-                        <Grid size={4} key={key}>
-                          <Stack alignItems="center">
-                            <Typography 
-                              sx={{ 
-                                fontWeight: 700, 
-                                fontSize: '1.1rem',
-                                color: project.color,
-                              }}
-                            >
-                              {value}
-                            </Typography>
-                            <Typography sx={{ fontSize: '0.8rem', color: 'text.secondary', textTransform: 'capitalize' }}>
-                              {key}
-                            </Typography>
-                          </Stack>
-                        </Grid>
-                      ))}
-                    </Grid>
-                  </CardContent>
-                </Card>
-              </Fade>
-            </Grid>
-          ))}
-        </Grid>
-
-        {/* CTA */}
-        <Stack alignItems="center" sx={{ mt: 8 }}>
-          <Button
-            component={Link}
-            href="/contact/get-started"
-            variant="contained"
-            size="large"
-            endIcon={<ArrowRight size={20} />}
-            sx={{
-              py: 2,
-              px: 6,
-              fontSize: '1.1rem',
-              fontWeight: 600,
-              borderRadius: '50px',
-              background: 'linear-gradient(135deg, #0066FF 0%, #6B46C1 100%)',
-              boxShadow: '0 8px 32px rgba(0, 102, 255, 0.3)',
-              '&:hover': {
-                transform: 'translateY(-2px)',
-                boxShadow: '0 12px 40px rgba(0, 102, 255, 0.4)',
-              },
-            }}
-          >
-            Start Your Project
-          </Button>
-        </Stack>
-      </Container>
-    </Box>
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+            Ready to Create Your Success Story?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Let's build something amazing together. Join our portfolio of successful projects.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contact/get-started"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all"
+            >
+              Start Your Project
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link 
+              href="/services"
+              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all"
+            >
+              View Our Services
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }

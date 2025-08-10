@@ -1,161 +1,266 @@
 import Link from 'next/link'
-import { Globe, Smartphone, Box, Sparkles, Users, ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight, CheckCircle, Code, Smartphone, Brain, Coins, Users, Headphones } from 'lucide-react'
 
 const services = [
   {
+    icon: Code,
     title: 'Web Development',
-    description: 'Build modern, scalable web applications that deliver exceptional user experiences',
-    icon: Globe,
+    description: 'Modern, scalable web applications built with cutting-edge technologies',
+    longDescription: 'We create responsive, fast, and secure web applications using the latest frameworks and best practices. From simple landing pages to complex enterprise applications, we deliver solutions that drive business growth.',
+    features: [
+      'React, Next.js, Vue.js development',
+      'Full-stack solutions with Node.js, Python',
+      'Progressive Web Apps (PWAs)',
+      'E-commerce platforms',
+      'Content Management Systems',
+      'API development and integration',
+    ],
+    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'AWS'],
+    startingPrice: '$5,000',
+    timeline: '4-12 weeks',
     href: '/services/web-development',
-    gradient: 'from-electric-blue to-neural-purple',
-    features: [
-      'Progressive Web Apps',
-      'E-commerce Platforms',
-      'Enterprise Solutions',
-      'Real-time Applications',
-    ],
-    technologies: ['React', 'Next.js', 'Vue.js', 'Angular', 'Node.js'],
+    gradient: 'from-blue-500 to-cyan-500',
   },
   {
-    title: 'Mobile Development',
-    description: 'Create native and cross-platform mobile apps that users love',
     icon: Smartphone,
+    title: 'Mobile Development',
+    description: 'Native and cross-platform mobile apps that users love',
+    longDescription: 'Create engaging mobile experiences with native iOS and Android apps or cross-platform solutions. We focus on user experience, performance, and scalability to ensure your app stands out in the app stores.',
+    features: [
+      'iOS and Android native development',
+      'Cross-platform with React Native',
+      'Flutter development',
+      'App Store optimization',
+      'Push notifications and analytics',
+      'Backend integration and APIs',
+    ],
+    technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase', 'MongoDB'],
+    startingPrice: '$8,000',
+    timeline: '6-16 weeks',
     href: '/services/mobile-development',
-    gradient: 'from-neural-purple to-quantum-green',
-    features: [
-      'iOS & Android Native',
-      'Cross-platform Solutions',
-      'App Store Optimization',
-      'Push Notifications',
-    ],
-    technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase'],
+    gradient: 'from-purple-500 to-pink-500',
   },
   {
-    title: 'Web3 & Blockchain',
-    description: 'Build decentralized applications and smart contract solutions',
-    icon: Box,
-    href: '/services/web3-blockchain',
-    gradient: 'from-quantum-green to-ai-orange',
+    icon: Brain,
+    title: 'AI-Powered Solutions',
+    description: 'Intelligent systems that transform your business operations',
+    longDescription: 'Leverage the power of artificial intelligence to automate processes, gain insights from data, and create intelligent user experiences. We build custom AI solutions tailored to your specific business needs.',
     features: [
-      'Smart Contracts',
-      'DeFi Platforms',
-      'NFT Marketplaces',
-      'Blockchain Integration',
-    ],
-    technologies: ['Solidity', 'Web3.js', 'Ethereum', 'Polygon', 'IPFS'],
-  },
-  {
-    title: 'AI-Powered SaaS',
-    description: 'Leverage our proprietary AI algorithms to build intelligent platforms',
-    icon: Sparkles,
-    href: '/services/ai-saas',
-    gradient: 'from-ai-orange to-web3-pink',
-    features: [
-      'Custom AI Models',
-      'Machine Learning',
-      'Predictive Analytics',
+      'Machine Learning model development',
       'Natural Language Processing',
+      'Computer Vision applications',
+      'Predictive analytics platforms',
+      'Chatbots and virtual assistants',
+      'AI integration with existing systems',
     ],
-    technologies: ['TensorFlow', 'PyTorch', 'OpenAI', 'Langchain', 'Python'],
+    technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI', 'Langchain', 'Docker'],
+    startingPrice: '$12,000',
+    timeline: '8-20 weeks',
+    href: '/services/ai-saas',
+    gradient: 'from-green-500 to-emerald-500',
   },
   {
-    title: 'Consulting',
-    description: 'Strategic technology guidance and digital transformation services',
-    icon: Users,
-    href: '/services/consulting',
-    gradient: 'from-web3-pink to-electric-blue',
+    icon: Coins,
+    title: 'Web3 & Blockchain',
+    description: 'Decentralized applications and smart contract development',
+    longDescription: 'Build the future of decentralized technology with blockchain solutions. From smart contracts to full DeFi platforms, we create secure, transparent, and efficient blockchain applications.',
     features: [
-      'Architecture Review',
-      'Technology Strategy',
-      'Team Training',
-      'Performance Optimization',
+      'Smart contract development',
+      'DeFi platform creation',
+      'NFT marketplace development',
+      'Cryptocurrency integration',
+      'Blockchain consulting',
+      'Security audits and testing',
     ],
-    technologies: ['Best Practices', 'Agile', 'DevOps', 'Cloud', 'Security'],
+    technologies: ['Solidity', 'Web3.js', 'Ethereum', 'Polygon', 'IPFS', 'Hardhat'],
+    startingPrice: '$15,000',
+    timeline: '10-24 weeks',
+    href: '/services/web3-blockchain',
+    gradient: 'from-orange-500 to-red-500',
+  },
+  {
+    icon: Users,
+    title: 'Consulting Services',
+    description: 'Strategic technology guidance and digital transformation',
+    longDescription: 'Get expert advice on technology strategy, architecture decisions, and digital transformation. Our senior consultants help you make informed decisions and avoid costly mistakes.',
+    features: [
+      'Technology strategy planning',
+      'Architecture review and design',
+      'Code audits and optimization',
+      'Team training and mentorship',
+      'Digital transformation roadmaps',
+      'Performance optimization',
+    ],
+    technologies: ['Best Practices', 'Architecture', 'DevOps', 'Cloud', 'Security', 'Agile'],
+    startingPrice: '$200/hour',
+    timeline: '1-12 weeks',
+    href: '/services/consulting',
+    gradient: 'from-indigo-500 to-purple-500',
+  },
+  {
+    icon: Headphones,
+    title: 'Support & Maintenance',
+    description: '24/7 support and ongoing maintenance for your applications',
+    longDescription: 'Keep your applications running smoothly with our comprehensive support and maintenance services. We provide ongoing updates, security patches, and technical support.',
+    features: [
+      '24/7 monitoring and support',
+      'Security updates and patches',
+      'Performance optimization',
+      'Bug fixes and improvements',
+      'Hosting and infrastructure management',
+      'Backup and disaster recovery',
+    ],
+    technologies: ['Monitoring', 'AWS', 'Docker', 'CI/CD', 'Security', 'Analytics'],
+    startingPrice: '$500/month',
+    timeline: 'Ongoing',
+    href: '/contact',
+    gradient: 'from-teal-500 to-cyan-500',
+  },
+]
+
+const processSteps = [
+  {
+    number: '01',
+    title: 'Discovery',
+    description: 'We understand your goals, requirements, and target audience',
+  },
+  {
+    number: '02',
+    title: 'Strategy',
+    description: 'We create a detailed plan and technology roadmap',
+  },
+  {
+    number: '03',
+    title: 'Design',
+    description: 'We design user-friendly interfaces and system architecture',
+  },
+  {
+    number: '04',
+    title: 'Development',
+    description: 'We build your solution using modern technologies',
+  },
+  {
+    number: '05',
+    title: 'Testing',
+    description: 'We thoroughly test for quality, security, and performance',
+  },
+  {
+    number: '06',
+    title: 'Launch',
+    description: 'We deploy your solution and provide ongoing support',
   },
 ]
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-deep-space pt-24">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-deep-space to-electric-blue/10">
-        <div className="section-padding text-center">
-          <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
-            Our <span className="gradient-text">Services</span>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full text-blue-700 font-medium mb-6">
+            <Code className="w-4 h-4" />
+            Our Services
+          </div>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
+            Transform Your{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Vision
+            </span>
+            <br />
+            Into Reality
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            End-to-end development solutions powered by cutting-edge technology and AI innovation
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            From web applications to AI-powered solutions, we provide end-to-end development 
+            services that drive innovation and business growth.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
-        <div className="section-padding">
-          <div className="space-y-24">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <div
-                key={service.title}
-                className={`flex flex-col ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                } gap-12 items-center`}
-              >
-                {/* Service Content */}
-                <div className="flex-1 space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
-                      <service.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h2 className="text-3xl font-display font-bold text-gray-900 dark:text-white">
-                      {service.title}
-                    </h2>
-                  </div>
-                  
-                  <p className="text-lg text-gray-600 dark:text-gray-300">
-                    {service.description}
-                  </p>
-
-                  <div className="space-y-3">
-                    {service.features.map((feature) => (
-                      <div key={feature} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-quantum-green flex-shrink-0" />
-                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
+              <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-gray-100">
+                <div className={`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center mb-6`}>
+                  <service.icon className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600 mb-6">{service.longDescription}</p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3">
-                      Technologies we use:
-                    </p>
+                    <h4 className="font-semibold text-gray-900 mb-3">What's Included:</h4>
+                    <ul className="space-y-2">
+                      {service.features.slice(0, 3).map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">Technologies:</h4>
                     <div className="flex flex-wrap gap-2">
                       {service.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-gray-100 dark:bg-silver-code/20 rounded-full text-sm text-gray-700 dark:text-gray-300"
+                          className="px-2 py-1 bg-gray-100 rounded-md text-xs font-medium text-gray-600"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
-
-                  <Link
+                </div>
+                
+                <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                  <div className="flex gap-6">
+                    <div>
+                      <div className="text-sm text-gray-500">Starting at</div>
+                      <div className="font-bold text-gray-900">{service.startingPrice}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Timeline</div>
+                      <div className="font-bold text-gray-900">{service.timeline}</div>
+                    </div>
+                  </div>
+                  <Link 
                     href={service.href}
-                    className="inline-flex items-center gap-2 text-electric-blue font-semibold hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg hover:-translate-y-0.5 transition-all"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                {/* Service Visual */}
-                <div className="flex-1">
-                  <div className={`aspect-square rounded-2xl bg-gradient-to-br ${service.gradient} p-1`}>
-                    <div className="w-full h-full rounded-2xl bg-white dark:bg-deep-space flex items-center justify-center">
-                      <service.icon className="w-32 h-32 text-gray-200 dark:text-silver-code/20" />
-                    </div>
-                  </div>
+      {/* Process Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Our Development Process
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A proven methodology that ensures successful project delivery
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="relative">
+                <div className="bg-white rounded-2xl p-8 hover:shadow-lg transition-all">
+                  <div className="text-5xl font-bold text-blue-100 mb-4">{step.number}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                  <p className="text-gray-600">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -164,20 +269,27 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-electric-blue to-neural-purple">
-        <div className="section-padding text-center">
-          <h2 className="text-4xl font-display font-bold text-white mb-6">
-            Ready to Build Something Amazing?
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+            Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help transform your ideas into reality
+          <p className="text-xl text-blue-100 mb-8">
+            Let's discuss your requirements and create a custom solution for your business
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact/get-started" className="btn-primary bg-white text-electric-blue hover:bg-gray-100">
-              Start Your Project
+            <Link 
+              href="/contact/get-started"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all"
+            >
+              Get Free Consultation
+              <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/contact/demo" className="btn-outline border-white text-white hover:bg-white hover:text-electric-blue">
-              Request a Demo
+            <Link 
+              href="/portfolio"
+              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-blue-600 transition-all"
+            >
+              View Our Work
             </Link>
           </div>
         </div>

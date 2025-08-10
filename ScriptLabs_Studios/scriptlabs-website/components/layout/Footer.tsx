@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Code2, Github, Linkedin, Twitter, Mail, MapPin, Phone } from 'lucide-react'
+import { Code2, Github, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react'
 
 const footerNavigation = {
   services: [
@@ -19,7 +19,7 @@ const footerNavigation = {
   resources: [
     { name: 'Documentation', href: '/docs' },
     { name: 'White Papers', href: '/insights/white-papers' },
-    { name: 'Case Studies', href: '/portfolio/case-studies' },
+    { name: 'Case Studies', href: '/portfolio' },
     { name: 'API Reference', href: '/api' },
     { name: 'Support', href: '/support' },
   ],
@@ -31,138 +31,143 @@ const footerNavigation = {
   ],
 }
 
-const socialLinks = [
-  { name: 'GitHub', href: '#', icon: Github },
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
-  { name: 'Twitter', href: '#', icon: Twitter },
-]
-
 export default function Footer() {
   return (
-    <footer className="bg-deep-space text-white">
-      <div className="section-padding">
-        <div className="py-16 lg:py-24">
-          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="space-y-8">
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-hero-gradient rounded-lg flex items-center justify-center">
-                  <Code2 className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-2xl font-display font-bold">
-                  ScriptLabs
-                </span>
-              </Link>
-              <p className="text-sm leading-6 text-gray-300">
-                Creating innovative solutions out of thin air. We specialize in AI-powered applications, 
-                web and mobile development, and Web3 technologies.
-              </p>
-              <div className="flex space-x-6">
-                {socialLinks.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-gray-400 hover:text-electric-blue transition-colors"
+    <footer className="bg-gray-900 text-white mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Logo and Brand Section */}
+        <div className="mb-12">
+          <Link href="/" className="inline-flex items-center space-x-3 mb-4">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <Code2 className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-xl font-bold text-white">ScriptLabs</span>
+          </Link>
+          <p className="text-gray-400 max-w-md">
+            Creating innovative solutions for modern businesses through AI-powered applications, 
+            web development, and cutting-edge technology.
+          </p>
+        </div>
+
+        {/* Navigation Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Services Column */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Services</h3>
+            <ul className="space-y-2">
+              {footerNavigation.services.map((item) => (
+                <li key={item.name}>
+                  <Link 
+                    href={item.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
-                    <span className="sr-only">{item.name}</span>
-                    <item.icon className="h-6 w-6" />
-                  </a>
-                ))}
-              </div>
-            </div>
-            
-            <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white">Services</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.services.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          className="text-sm leading-6 text-gray-300 hover:text-electric-blue transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.company.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          className="text-sm leading-6 text-gray-300 hover:text-electric-blue transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white">Resources</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.resources.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          className="text-sm leading-6 text-gray-300 hover:text-electric-blue transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.legal.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          href={item.href}
-                          className="text-sm leading-6 text-gray-300 hover:text-electric-blue transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company Column */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Company</h3>
+            <ul className="space-y-2">
+              {footerNavigation.company.map((item) => (
+                <li key={item.name}>
+                  <Link 
+                    href={item.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources Column */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Resources</h3>
+            <ul className="space-y-2">
+              {footerNavigation.resources.map((item) => (
+                <li key={item.name}>
+                  <Link 
+                    href={item.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal Column */}
+          <div>
+            <h3 className="font-semibold text-white mb-4">Legal</h3>
+            <ul className="space-y-2">
+              {footerNavigation.legal.map((item) => (
+                <li key={item.name}>
+                  <Link 
+                    href={item.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Contact Information */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8 border-t border-gray-800">
+          <div className="flex items-center space-x-3">
+            <Mail className="w-5 h-5 text-blue-400" />
+            <div>
+              <p className="text-sm text-gray-400">Email</p>
+              <a href="mailto:hello@scriptlabs.io" className="text-white hover:text-blue-400 transition-colors">
+                support@scriptstudio8.com
+              </a>
             </div>
           </div>
-          
-          <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-            <div className="grid gap-8 lg:grid-cols-3">
-              <div className="flex items-center space-x-2 text-sm text-gray-400">
-                <MapPin className="h-4 w-4" />
-                <span>San Francisco, CA | New York, NY | Austin, TX</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-400">
-                <Mail className="h-4 w-4" />
-                <a href="mailto:hello@scriptlabs.io" className="hover:text-electric-blue transition-colors">
-                  hello@scriptlabs.io
-                </a>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-400">
-                <Phone className="h-4 w-4" />
-                <a href="tel:+14155551234" className="hover:text-electric-blue transition-colors">
-                  +1 (415) 555-1234
-                </a>
-              </div>
+          <div className="flex items-center space-x-3">
+            <Phone className="w-5 h-5 text-blue-400" />
+            <div>
+              <p className="text-sm text-gray-400">Phone</p>
+              <a href="tel:+14155551234" className="text-white hover:text-blue-400 transition-colors">
+                +1 (916) 660-3509
+              </a>
             </div>
-            
-            <p className="mt-8 text-xs leading-5 text-gray-400">
-              &copy; {new Date().getFullYear()} ScriptLabs Studios. All rights reserved. Creating solutions out of thin air.
-            </p>
           </div>
+          <div className="flex items-center space-x-3">
+            <MapPin className="w-5 h-5 text-blue-400" />
+            <div>
+              <p className="text-sm text-gray-400">Location</p>
+              <p className="text-white">Seattle, WA</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Links and Copyright */}
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
+          <div className="flex items-center space-x-4 mb-4 md:mb-0">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+               className="text-gray-400 hover:text-white transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+               className="text-gray-400 hover:text-white transition-colors">
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+               className="text-gray-400 hover:text-white transition-colors">
+              <Twitter className="w-5 h-5" />
+            </a>
+          </div>
+          <p className="text-sm text-gray-400">
+            © 2025 ScriptLabs Studios. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

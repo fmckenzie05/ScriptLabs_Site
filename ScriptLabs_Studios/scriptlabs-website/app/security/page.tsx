@@ -268,9 +268,9 @@ export default function SecurityPage() {
             practices, please contact our security team immediately.
           </Typography>
           <Typography sx={{ fontWeight: 600 }}>
-            Email: security@scriptlabs.com
+            Email: support@scriptstudio8.com
             <br />
-            Phone: +1 (555) 123-SECURE
+            Phone: +1 (916) 660-3509
           </Typography>
         </Box>
       </Container>
