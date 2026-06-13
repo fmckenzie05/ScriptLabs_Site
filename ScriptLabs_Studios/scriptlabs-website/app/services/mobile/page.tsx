@@ -34,24 +34,18 @@ const technologies = [
   { name: 'AWS Mobile', color: '#FF9900' },
 ]
 
-const projects = [
+const capabilities = [
   {
-    name: 'FinanceTracker Pro',
-    description: 'Personal finance app with AI-powered insights',
-    stats: { downloads: '500K+', rating: '4.9', revenue: '$2M+' },
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop',
+    title: 'Cross-Platform Apps',
+    description: 'Build once, deploy to both iOS and Android with native performance using React Native or Flutter.',
   },
   {
-    name: 'HealthSync',
-    description: 'Healthcare platform connecting patients and doctors',
-    stats: { users: '200K+', consultations: '1M+', satisfaction: '96%' },
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop',
+    title: 'Offline-First Architecture',
+    description: 'Apps that work reliably without connectivity, syncing data when back online.',
   },
   {
-    name: 'EduLearn',
-    description: 'Interactive learning platform for students',
-    stats: { students: '100K+', courses: '500+', completion: '85%' },
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop',
+    title: 'Secure Data Handling',
+    description: 'End-to-end encryption, secure storage, and best practices for handling sensitive user data.',
   },
 ]
 
@@ -259,56 +253,34 @@ export default function MobilePage() {
           </Grid>
         </Box>
 
-        {/* Success Stories */}
+        {/* What We Build */}
         <Box sx={{ mb: 10 }}>
           <Typography variant="h3" sx={{ fontWeight: 700, mb: 6, textAlign: 'center' }}>
-            Success Stories
+            What We Build
           </Typography>
           <Grid container spacing={4}>
-            {projects.map((project, index) => (
-              <Grid size={{ xs: 12, md: 4 }} key={project.name}>
+            {capabilities.map((cap, index) => (
+              <Grid size={{ xs: 12, md: 4 }} key={cap.title}>
                 <Fade in timeout={800 + index * 100}>
                   <Card
                     sx={{
                       height: '100%',
                       borderRadius: '20px',
-                      overflow: 'hidden',
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
                       transition: 'all 0.3s',
                       '&:hover': {
                         transform: 'translateY(-8px)',
-                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.12)',
                       }
                     }}
                   >
-                    <Box
-                      sx={{
-                        height: 200,
-                        background: `url(${project.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                      }}
-                    />
-                    <CardContent sx={{ p: 3 }}>
+                    <CardContent sx={{ p: 4 }}>
                       <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
-                        {project.name}
+                        {cap.title}
                       </Typography>
-                      <Typography sx={{ color: 'text.secondary', mb: 3 }}>
-                        {project.description}
+                      <Typography sx={{ color: 'text.secondary' }}>
+                        {cap.description}
                       </Typography>
-                      <Grid container spacing={1}>
-                        {Object.entries(project.stats).map(([key, value]) => (
-                          <Grid size={4} key={key}>
-                            <Stack alignItems="center">
-                              <Typography sx={{ fontWeight: 700, color: '#0066FF' }}>
-                                {value}
-                              </Typography>
-                              <Typography sx={{ fontSize: '0.8rem', color: 'text.secondary', textTransform: 'capitalize' }}>
-                                {key}
-                              </Typography>
-                            </Stack>
-                          </Grid>
-                        ))}
-                      </Grid>
                     </CardContent>
                   </Card>
                 </Fade>

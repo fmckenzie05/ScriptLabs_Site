@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Coins, Shield, Zap, Globe, Code, Users, Star, CheckCircle, Play, Layers, Lock } from 'lucide-react'
+import { ArrowRight, Coins, Shield, Zap, Globe, Users, CheckCircle, Play, Layers, Lock } from 'lucide-react'
 
 const features = [
   {
@@ -68,23 +68,20 @@ const services = [
   },
 ]
 
-const portfolio = [
+const blockchainCapabilities = [
   {
-    title: 'DeFi Lending Platform',
-    description: 'Decentralized lending protocol with $50M+ TVL and automated liquidation systems.',
-    metrics: { tvl: '$50M+', users: '25K+', apr: 'Up to 12%' },
+    title: 'DeFi Protocol Development',
+    description: 'Lending, borrowing, and liquidity pool protocols with automated liquidation and interest rate models.',
     tech: ['Solidity', 'Ethereum', 'Web3.js'],
   },
   {
-    title: 'NFT Art Marketplace',
-    description: 'Premium NFT marketplace for digital art with advanced royalty distribution.',
-    metrics: { volume: '$10M+', collections: '500+', artists: '2K+' },
+    title: 'NFT Marketplace Development',
+    description: 'Full-featured NFT platforms with minting, listing, auction mechanics, and royalty distribution.',
     tech: ['Polygon', 'IPFS', 'React'],
   },
   {
-    title: 'GameFi Platform',
-    description: 'Play-to-earn gaming ecosystem with NFT rewards and tokenized governance.',
-    metrics: { players: '100K+', rewards: '$2M+', nfts: '50K+' },
+    title: 'GameFi & Play-to-Earn',
+    description: 'Blockchain-integrated gaming with NFT rewards, token economies, and on-chain governance.',
     tech: ['Solidity', 'Unity', 'Moralis'],
   },
 ]
@@ -232,34 +229,25 @@ export default function Web3BlockchainPage() {
         </div>
       </section>
 
-      {/* Portfolio Section */}
+      {/* Capabilities Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Blockchain Success Stories
+              What We Can Build
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Proven track record in decentralized applications
+              Types of blockchain applications we develop
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {portfolio.map((project, index) => (
+            {blockchainCapabilities.map((cap, index) => (
               <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                <p className="text-gray-600 mb-6">{project.description}</p>
-                
-                <div className="grid grid-cols-3 gap-4 mb-6 text-center">
-                  {Object.entries(project.metrics).map(([key, value]) => (
-                    <div key={key}>
-                      <div className="font-bold text-gray-900">{value}</div>
-                      <div className="text-sm text-gray-500 capitalize">{key}</div>
-                    </div>
-                  ))}
-                </div>
-                
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{cap.title}</h3>
+                <p className="text-gray-600 mb-6">{cap.description}</p>
+
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
+                  {cap.tech.map((tech) => (
                     <span key={tech} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
                       {tech}
                     </span>

@@ -124,9 +124,7 @@ export default function PrivacyPage() {
             <Typography>
               If you have questions about this Privacy Policy, please contact us at:
               <br />
-              Email: privacy@scriptlabs.com
-              <br />
-              Address: 123 Innovation Drive, San Francisco, CA 94105
+              Email: support@scriptstudio8.com
             </Typography>
           </Box>
         </Stack>

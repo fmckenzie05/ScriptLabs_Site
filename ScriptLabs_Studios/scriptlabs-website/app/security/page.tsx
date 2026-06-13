@@ -26,13 +26,13 @@ const securityMeasures = [
   },
 ]
 
-const certifications = [
-  'SOC 2 Type II Compliant',
-  'GDPR Compliant',
-  'CCPA Compliant',
-  'HIPAA Ready',
-  'ISO 27001 Certified',
-  'PCI DSS Compliant',
+const practices = [
+  'OWASP Top 10 Compliance',
+  'GDPR-Aware Development',
+  'Dependency Vulnerability Scanning',
+  'Secure Code Reviews',
+  'Environment Variable Management',
+  'HTTPS Everywhere',
 ]
 
 export default function SecurityPage() {
@@ -110,13 +110,13 @@ export default function SecurityPage() {
           </Grid>
         </Box>
 
-        {/* Certifications */}
+        {/* Security Practices */}
         <Box sx={{ mb: 10 }}>
           <Typography variant="h3" sx={{ fontWeight: 700, mb: 6, textAlign: 'center' }}>
-            Certifications & Compliance
+            Security Practices
           </Typography>
           <Grid container spacing={3}>
-            {certifications.map((cert) => (
+            {practices.map((cert) => (
               <Grid size={{ xs: 12, sm: 6, md: 4 }} key={cert}>
                 <Card
                   sx={{

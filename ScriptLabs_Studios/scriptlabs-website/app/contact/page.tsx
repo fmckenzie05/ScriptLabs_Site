@@ -1,98 +1,71 @@
 'use client'
 
-import { 
-  Container, 
-  Typography, 
-  Grid, 
-  Card, 
-  CardContent, 
-  Box, 
-  Stack, 
+import {
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Box,
+  Stack,
   Chip,
   Button,
   Fade,
   Slide
 } from '@mui/material'
-import { MessageSquare, Calendar, Rocket, MapPin, Phone, Mail, Clock, Users, ArrowRight } from 'lucide-react'
+import { MessageSquare, Calendar, Rocket, Mail, Clock, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 const contactMethods = [
   {
     icon: Rocket,
     title: 'Start a Project',
-    description: 'Ready to build something amazing? Tell us about your project and get a detailed proposal.',
+    description: 'Ready to build something? Tell us about your project and we\'ll put together a plan.',
     action: 'Get Started',
     href: '/contact/get-started',
     color: '#0066FF',
-    features: ['Free consultation', 'Detailed proposal', '24-hour response', 'Project roadmap'],
+    features: ['Free consultation', 'Project scoping', 'Quick response', 'Clear roadmap'],
   },
   {
     icon: Calendar,
-    title: 'Schedule a Demo',
-    description: 'See our technology in action with a personalized demo tailored to your needs.',
-    action: 'Book Demo',
+    title: 'Schedule a Call',
+    description: 'Want to talk it through first? Book a time and we\'ll walk through your ideas.',
+    action: 'Book a Call',
     href: '/contact/demo',
     color: '#6B46C1',
-    features: ['Live demonstration', '30-60 min session', 'Q&A included', 'Custom scenarios'],
+    features: ['30-60 min session', 'No obligation', 'Q&A included', 'Custom scenarios'],
   },
   {
     icon: MessageSquare,
     title: 'General Inquiry',
-    description: 'Have questions about our services, pricing, or capabilities? We\'re here to help.',
+    description: 'Have questions about our services or capabilities? Drop us a line.',
     action: 'Send Message',
-    href: 'mailto:hello@scriptlabs.com',
+    href: 'mailto:hello@scriptstudio8.com',
     color: '#10B981',
     features: ['Quick response', 'Expert guidance', 'No obligation', 'Friendly support'],
-  },
-]
-
-const offices = [
-  {
-    city: 'San Francisco',
-    address: '123 Innovation Drive, San Francisco, CA 94105',
-    phone: '+1 (555) 123-4567',
-    email: 'sf@scriptlabs.com',
-    timezone: 'PST (UTC-8)',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
-  },
-  {
-    city: 'New York',
-    address: '456 Tech Avenue, New York, NY 10001',
-    phone: '+1 (555) 234-5678',
-    email: 'ny@scriptlabs.com',
-    timezone: 'EST (UTC-5)',
-    image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&h=300&fit=crop',
-  },
-  {
-    city: 'London',
-    address: '789 Digital Street, London, EC2A 4DP, UK',
-    phone: '+44 20 7123 4567',
-    email: 'london@scriptlabs.com',
-    timezone: 'GMT (UTC+0)',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop',
   },
 ]
 
 const faqs = [
   {
     question: 'How quickly can you start a project?',
-    answer: 'We typically begin new projects within 1-2 weeks of contract signing, depending on project scope and team availability.',
+    answer: 'We typically begin new projects within 1-2 weeks, depending on project scope and current workload.',
   },
   {
-    question: 'Do you work with startups or just enterprises?',
-    answer: 'We work with companies of all sizes, from early-stage startups to Fortune 500 enterprises. Our approach scales to your needs.',
+    question: 'What size projects do you take on?',
+    answer: 'We work with projects of all sizes — from MVPs and prototypes to full-scale applications. We\'re happy to scope what makes sense for your budget.',
   },
   {
     question: 'What technologies do you specialize in?',
-    answer: 'We specialize in modern web technologies, mobile development, AI/ML, blockchain, and cloud platforms. Check our Technology page for details.',
+    answer: 'We specialize in modern web technologies (React, Next.js), mobile development (React Native, Flutter), AI/ML, and blockchain. Check our Technology page for details.',
   },
   {
     question: 'Do you provide ongoing support after launch?',
-    answer: 'Yes, we offer comprehensive post-launch support including maintenance, updates, scaling, and feature enhancements.',
+    answer: 'Yes, we offer post-launch support including maintenance, updates, and feature enhancements.',
   },
   {
     question: 'How do you handle project communication?',
-    answer: 'We use agile methodologies with regular sprint reviews, daily standups, and dedicated project managers for seamless communication.',
+    answer: 'We use agile practices with regular check-ins and transparent communication throughout the project.',
   },
   {
     question: 'Can you help with existing projects or code?',
@@ -127,7 +100,7 @@ export default function ContactPage() {
                 }}
               />
             </Fade>
-            
+
             <Slide direction="up" in timeout={800}>
               <Typography
                 variant="h1"
@@ -141,7 +114,7 @@ export default function ContactPage() {
                 Let's Build Something Great Together
               </Typography>
             </Slide>
-            
+
             <Fade in timeout={1000}>
               <Typography
                 sx={{
@@ -150,8 +123,8 @@ export default function ContactPage() {
                   maxWidth: '700px',
                 }}
               >
-                Ready to transform your ideas into reality? Choose how you'd like to connect 
-                with our team of experts.
+                Ready to turn your ideas into reality? Reach out and let's talk
+                about your project.
               </Typography>
             </Fade>
           </Stack>
@@ -198,11 +171,11 @@ export default function ContactPage() {
                       >
                         <method.icon size={36} color={method.color} />
                       </Box>
-                      
+
                       <Typography variant="h5" sx={{ fontWeight: 700, mb: 2, textAlign: 'center' }}>
                         {method.title}
                       </Typography>
-                      
+
                       <Typography sx={{ color: 'text.secondary', mb: 4, textAlign: 'center', flexGrow: 1 }}>
                         {method.description}
                       </Typography>
@@ -253,77 +226,6 @@ export default function ContactPage() {
           </Grid>
         </Box>
 
-        {/* Office Locations */}
-        <Box sx={{ mb: 10 }}>
-          <Typography variant="h3" sx={{ fontWeight: 700, mb: 6, textAlign: 'center' }}>
-            Our Global Offices
-          </Typography>
-          <Grid container spacing={4}>
-            {offices.map((office, index) => (
-              <Grid size={{ xs: 12, md: 4 }} key={office.city}>
-                <Fade in timeout={800 + index * 100}>
-                  <Card
-                    sx={{
-                      height: '100%',
-                      borderRadius: '20px',
-                      overflow: 'hidden',
-                      transition: 'all 0.3s',
-                      '&:hover': {
-                        transform: 'translateY(-8px)',
-                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
-                      }
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        height: 200,
-                        background: `url(${office.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                      }}
-                    />
-                    <CardContent sx={{ p: 4 }}>
-                      <Typography variant="h6" sx={{ fontWeight: 700, mb: 3 }}>
-                        {office.city}
-                      </Typography>
-                      
-                      <Stack spacing={2}>
-                        <Stack direction="row" alignItems="start" spacing={2}>
-                          <MapPin size={16} color="#64748B" style={{ marginTop: 2, flexShrink: 0 }} />
-                          <Typography sx={{ fontSize: '0.9rem', color: 'text.secondary' }}>
-                            {office.address}
-                          </Typography>
-                        </Stack>
-                        
-                        <Stack direction="row" alignItems="center" spacing={2}>
-                          <Phone size={16} color="#64748B" />
-                          <Typography sx={{ fontSize: '0.9rem', color: 'text.secondary' }}>
-                            {office.phone}
-                          </Typography>
-                        </Stack>
-                        
-                        <Stack direction="row" alignItems="center" spacing={2}>
-                          <Mail size={16} color="#64748B" />
-                          <Typography sx={{ fontSize: '0.9rem', color: 'text.secondary' }}>
-                            {office.email}
-                          </Typography>
-                        </Stack>
-                        
-                        <Stack direction="row" alignItems="center" spacing={2}>
-                          <Clock size={16} color="#64748B" />
-                          <Typography sx={{ fontSize: '0.9rem', color: 'text.secondary' }}>
-                            {office.timezone}
-                          </Typography>
-                        </Stack>
-                      </Stack>
-                    </CardContent>
-                  </Card>
-                </Fade>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
         {/* FAQ Section */}
         <Box sx={{ mb: 10 }}>
           <Typography variant="h3" sx={{ fontWeight: 700, mb: 6, textAlign: 'center' }}>
@@ -357,53 +259,6 @@ export default function ContactPage() {
           </Grid>
         </Box>
 
-        {/* Quick Stats */}
-        <Box sx={{ mb: 8 }}>
-          <Grid container spacing={4}>
-            {[
-              { number: '200+', label: 'Happy Clients', icon: Users },
-              { number: '500+', label: 'Projects Delivered', icon: Rocket },
-              { number: '24hr', label: 'Response Time', icon: Clock },
-              { number: '99.9%', label: 'Client Satisfaction', icon: MessageSquare },
-            ].map((stat, index) => (
-              <Grid size={{ xs: 6, md: 3 }} key={stat.label}>
-                <Fade in timeout={1000 + index * 100}>
-                  <Stack alignItems="center" spacing={2}>
-                    <Box
-                      sx={{
-                        width: 80,
-                        height: 80,
-                        borderRadius: '20px',
-                        background: 'linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(107, 70, 193, 0.1) 100%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <stat.icon size={32} color="#0066FF" />
-                    </Box>
-                    <Typography
-                      sx={{
-                        fontSize: '2.5rem',
-                        fontWeight: 800,
-                        background: 'linear-gradient(135deg, #0066FF 0%, #6B46C1 100%)',
-                        backgroundClip: 'text',
-                        WebkitBackgroundClip: 'text',
-                        color: 'transparent',
-                      }}
-                    >
-                      {stat.number}
-                    </Typography>
-                    <Typography sx={{ fontWeight: 600, textAlign: 'center' }}>
-                      {stat.label}
-                    </Typography>
-                  </Stack>
-                </Fade>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
         {/* CTA */}
         <Box
           sx={{
@@ -418,8 +273,7 @@ export default function ContactPage() {
             Still Have Questions?
           </Typography>
           <Typography sx={{ fontSize: '1.1rem', mb: 4, opacity: 0.9, maxWidth: '600px', mx: 'auto' }}>
-            Our team is here to help you make the right decision for your project. 
-            Get in touch and let's discuss your needs.
+            We're here to help. Reach out and let's figure out the best path forward for your project.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} justifyContent="center">
             <Button
@@ -444,7 +298,7 @@ export default function ContactPage() {
               Start Your Project
             </Button>
             <Button
-              href="mailto:hello@scriptlabs.com"
+              href="mailto:hello@scriptstudio8.com"
               variant="outlined"
               size="large"
               sx={{

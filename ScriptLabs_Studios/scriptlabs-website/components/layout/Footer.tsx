@@ -127,7 +127,7 @@ export default function Footer() {
             <Mail className="w-5 h-5 text-blue-400" />
             <div>
               <p className="text-sm text-gray-400">Email</p>
-              <a href="mailto:hello@scriptlabs.io" className="text-white hover:text-blue-400 transition-colors">
+              <a href="mailto:hello@scriptstudio8.com" className="text-white hover:text-blue-400 transition-colors">
                 support@scriptstudio8.com
               </a>
             </div>

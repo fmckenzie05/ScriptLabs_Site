@@ -13,7 +13,7 @@ import {
   Fade,
   Slide
 } from '@mui/material'
-import { Users, TrendingUp, Cog, Target, Lightbulb, Shield, Rocket, BarChart, ArrowRight, CheckCircle } from 'lucide-react'
+import { Users, TrendingUp, Cog, Target, Lightbulb, Shield, Rocket, ArrowRight, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 
 const services = [
@@ -56,12 +56,12 @@ const services = [
 ]
 
 const industries = [
-  { name: 'FinTech', projects: '50+', icon: '💰', color: '#0066FF' },
-  { name: 'HealthTech', projects: '35+', icon: '🏥', color: '#10B981' },
-  { name: 'E-commerce', projects: '40+', icon: '🛒', color: '#F59E0B' },
-  { name: 'EdTech', projects: '25+', icon: '📚', color: '#6B46C1' },
-  { name: 'SaaS Platforms', projects: '60+', icon: '☁️', color: '#EC4899' },
-  { name: 'Real Estate', projects: '20+', icon: '🏢', color: '#EF4444' },
+  { name: 'FinTech', focus: 'Payment & banking systems', icon: '💰', color: '#0066FF' },
+  { name: 'HealthTech', focus: 'HIPAA-aware applications', icon: '🏥', color: '#10B981' },
+  { name: 'E-commerce', focus: 'Storefront & checkout flows', icon: '🛒', color: '#F59E0B' },
+  { name: 'EdTech', focus: 'Learning platforms & LMS', icon: '📚', color: '#6B46C1' },
+  { name: 'SaaS Platforms', focus: 'Multi-tenant architecture', icon: '☁️', color: '#EC4899' },
+  { name: 'Real Estate', focus: 'Listing & property tools', icon: '🏢', color: '#EF4444' },
 ]
 
 const consultingProcess = [
@@ -88,30 +88,6 @@ const consultingProcess = [
     description: 'Continuous improvement and scaling recommendations',
     duration: 'Long-term',
     deliverables: ['Performance Metrics', 'Scaling Strategies', 'Technology Updates']
-  },
-]
-
-const caseStudies = [
-  {
-    client: 'Fortune 500 Bank',
-    challenge: 'Legacy system modernization and cloud migration',
-    solution: 'Microservices architecture and gradual cloud migration strategy',
-    results: ['40% cost reduction', '99.9% uptime', '60% faster deployments'],
-    industry: 'Financial Services',
-  },
-  {
-    client: 'Healthcare Startup',
-    challenge: 'Scaling platform to handle 1M+ users while maintaining HIPAA compliance',
-    solution: 'Auto-scaling architecture with advanced security measures',
-    results: ['10x user growth', 'HIPAA compliant', '50% faster load times'],
-    industry: 'HealthTech',
-  },
-  {
-    client: 'E-commerce Leader',
-    challenge: 'AI-powered personalization and recommendation system',
-    solution: 'Custom ML models integrated with existing e-commerce platform',
-    results: ['35% conversion increase', '50% higher engagement', '$2M revenue boost'],
-    industry: 'Retail',
   },
 ]
 
@@ -305,7 +281,7 @@ export default function ConsultingPage() {
         {/* Industries */}
         <Box sx={{ mb: 10 }}>
           <Typography variant="h3" sx={{ fontWeight: 700, mb: 6, textAlign: 'center' }}>
-            Industry Experience
+            Industries We Work With
           </Typography>
           <Grid container spacing={3}>
             {industries.map((industry, index) => (
@@ -331,8 +307,8 @@ export default function ConsultingPage() {
                     <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
                       {industry.name}
                     </Typography>
-                    <Typography sx={{ color: 'text.secondary' }}>
-                      {industry.projects} Projects Completed
+                    <Typography sx={{ color: 'text.secondary', fontSize: '0.9rem' }}>
+                      {industry.focus}
                     </Typography>
                   </Card>
                 </Fade>
@@ -399,78 +375,6 @@ export default function ConsultingPage() {
                             <CheckCircle size={14} color="#10B981" />
                             <Typography sx={{ fontSize: '0.9rem', color: 'text.secondary' }}>
                               {deliverable}
-                            </Typography>
-                          </Stack>
-                        ))}
-                      </Stack>
-                    </CardContent>
-                  </Card>
-                </Fade>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Case Studies */}
-        <Box sx={{ mb: 10 }}>
-          <Typography variant="h3" sx={{ fontWeight: 700, mb: 6, textAlign: 'center' }}>
-            Success Stories
-          </Typography>
-          <Grid container spacing={4}>
-            {caseStudies.map((study, index) => (
-              <Grid size={{ xs: 12, md: 4 }} key={study.client}>
-                <Fade in timeout={800 + index * 100}>
-                  <Card
-                    sx={{
-                      height: '100%',
-                      borderRadius: '20px',
-                      overflow: 'hidden',
-                      transition: 'all 0.3s',
-                      '&:hover': {
-                        transform: 'translateY(-8px)',
-                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
-                      }
-                    }}
-                  >
-                    <CardContent sx={{ p: 4 }}>
-                      <Stack direction="row" justifyContent="space-between" alignItems="start" sx={{ mb: 3 }}>
-                        <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                          {study.client}
-                        </Typography>
-                        <Chip
-                          label={study.industry}
-                          size="small"
-                          sx={{
-                            background: 'rgba(0, 102, 255, 0.1)',
-                            color: '#0066FF',
-                            fontWeight: 600,
-                          }}
-                        />
-                      </Stack>
-
-                      <Typography sx={{ fontWeight: 600, mb: 1, fontSize: '0.9rem' }}>
-                        Challenge:
-                      </Typography>
-                      <Typography sx={{ color: 'text.secondary', mb: 3, fontSize: '0.9rem' }}>
-                        {study.challenge}
-                      </Typography>
-
-                      <Typography sx={{ fontWeight: 600, mb: 1, fontSize: '0.9rem' }}>
-                        Solution:
-                      </Typography>
-                      <Typography sx={{ color: 'text.secondary', mb: 3, fontSize: '0.9rem' }}>
-                        {study.solution}
-                      </Typography>
-
-                      <Typography sx={{ fontWeight: 600, mb: 2, fontSize: '0.9rem' }}>
-                        Results:
-                      </Typography>
-                      <Stack spacing={1}>
-                        {study.results.map((result) => (
-                          <Stack key={result} direction="row" alignItems="center" spacing={1}>
-                            <CheckCircle size={14} color="#10B981" />
-                            <Typography sx={{ fontSize: '0.9rem', color: '#10B981', fontWeight: 600 }}>
-                              {result}
                             </Typography>
                           </Stack>
                         ))}

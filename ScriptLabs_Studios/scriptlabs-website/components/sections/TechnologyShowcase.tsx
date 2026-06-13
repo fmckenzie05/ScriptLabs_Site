@@ -8,40 +8,40 @@ const technologies = [
     id: 'ai',
     title: 'AI & Machine Learning',
     icon: Brain,
-    description: 'Proprietary algorithms and custom models that learn and adapt',
+    description: 'Custom models and intelligent features built into your applications',
     features: [
       'Natural Language Processing',
       'Computer Vision',
       'Predictive Analytics',
       'Deep Learning Models',
     ],
-    stats: { value: '50+', label: 'AI Models Deployed' },
+    stats: { value: 'GPT-4 / Claude', label: 'AI Integration' },
   },
   {
     id: 'performance',
     title: 'Performance Optimization',
     icon: Zap,
-    description: 'Lightning-fast applications with optimal resource utilization',
+    description: 'Fast applications with optimal resource utilization',
     features: [
       'Code Splitting',
       'Edge Computing',
       'CDN Integration',
       'Database Optimization',
     ],
-    stats: { value: '<100ms', label: 'Average Response Time' },
+    stats: { value: '<100ms', label: 'Target Response Time' },
   },
   {
     id: 'security',
     title: 'Security First',
     icon: Shield,
-    description: 'Enterprise-grade security with compliance and best practices',
+    description: 'Security best practices built into every layer of your application',
     features: [
       'End-to-End Encryption',
-      'GDPR/CCPA Compliance',
+      'OWASP Best Practices',
       'Regular Security Audits',
       'Zero-Trust Architecture',
     ],
-    stats: { value: '99.9%', label: 'Uptime Guarantee' },
+    stats: { value: 'OWASP', label: 'Security Standards' },
   },
   {
     id: 'architecture',
@@ -54,7 +54,7 @@ const technologies = [
       'Auto-scaling',
       'Load Balancing',
     ],
-    stats: { value: '10M+', label: 'Requests Handled Daily' },
+    stats: { value: 'Cloud', label: 'Native Architecture' },
   },
   {
     id: 'devops',
@@ -67,7 +67,7 @@ const technologies = [
       'Automated Testing',
       'Monitoring & Logging',
     ],
-    stats: { value: '24/7', label: 'Monitoring & Support' },
+    stats: { value: 'CI/CD', label: 'Automated Pipelines' },
   },
   {
     id: 'cloud',
@@ -80,7 +80,7 @@ const technologies = [
       'Cloud Storage',
       'Global Distribution',
     ],
-    stats: { value: '5', label: 'Continents Served' },
+    stats: { value: 'Multi-Cloud', label: 'Platform Support' },
   },
 ]
 
@@ -96,7 +96,7 @@ export default function TechnologyShowcase() {
             Our Technology Stack
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Cutting-edge technologies combined with proprietary innovations
+            Modern technologies and proven patterns for reliable software
           </p>
         </div>
 
@@ -175,7 +175,7 @@ export default function TechnologyShowcase() {
               <div className="pt-6 border-t border-silver-code/20">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-400">
-                    Enterprise-ready technology stack
+                    Production-ready technology stack
                   </span>
                   <div className="flex gap-2">
                     {['TypeScript', 'Python', 'Go', 'Rust'].map((lang) => (

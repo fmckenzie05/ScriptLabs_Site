@@ -26,12 +26,12 @@ const features = [
 ]
 
 const blockchains = [
-  { name: 'Ethereum', color: '#627EEA', marketCap: '$200B+' },
-  { name: 'Polygon', color: '#8247E5', marketCap: '$8B+' },
-  { name: 'Binance Smart Chain', color: '#F3BA2F', marketCap: '$45B+' },
-  { name: 'Avalanche', color: '#E84142', marketCap: '$12B+' },
-  { name: 'Solana', color: '#00FFA3', marketCap: '$25B+' },
-  { name: 'Arbitrum', color: '#213147', marketCap: '$2B+' },
+  { name: 'Ethereum', color: '#627EEA', type: 'Layer 1' },
+  { name: 'Polygon', color: '#8247E5', type: 'Layer 2' },
+  { name: 'Binance Smart Chain', color: '#F3BA2F', type: 'Layer 1' },
+  { name: 'Avalanche', color: '#E84142', type: 'Layer 1' },
+  { name: 'Solana', color: '#00FFA3', type: 'Layer 1' },
+  { name: 'Arbitrum', color: '#213147', type: 'Layer 2' },
 ]
 
 const services = [
@@ -65,24 +65,18 @@ const services = [
   },
 ]
 
-const projects = [
+const web3Capabilities = [
   {
-    name: 'DeFiSwap Exchange',
-    description: 'Next-generation DEX with automated market making',
-    metrics: { tvl: '$50M+', volume: '$500M+', users: '25K+' },
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop',
+    title: 'DEX & AMM Development',
+    description: 'Decentralized exchange platforms with automated market-making, liquidity pools, and swap functionality.',
   },
   {
-    name: 'ArtChain NFT Platform',
-    description: 'Premium NFT marketplace for digital artists',
-    metrics: { nfts: '100K+', artists: '5K+', sales: '$10M+' },
-    image: 'https://images.unsplash.com/photo-1634973357973-f2ed2657db3c?w=400&h=300&fit=crop',
+    title: 'NFT Platform Development',
+    description: 'End-to-end NFT marketplaces with minting, listing, bidding, and royalty distribution systems.',
   },
   {
-    name: 'GreenDAO Governance',
-    description: 'Environmental sustainability DAO with $25M treasury',
-    metrics: { members: '15K+', proposals: '500+', funded: '$5M+' },
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
+    title: 'DAO & Governance Systems',
+    description: 'On-chain governance platforms with proposal creation, voting mechanisms, and treasury management.',
   },
 ]
 
@@ -281,7 +275,7 @@ export default function Web3Page() {
                         {blockchain.name}
                       </Typography>
                       <Chip
-                        label={blockchain.marketCap}
+                        label={blockchain.type}
                         sx={{
                           background: blockchain.color,
                           color: 'white',
@@ -364,56 +358,34 @@ export default function Web3Page() {
           </Grid>
         </Box>
 
-        {/* Success Stories */}
+        {/* What We Can Build */}
         <Box sx={{ mb: 10 }}>
           <Typography variant="h3" sx={{ fontWeight: 700, mb: 6, textAlign: 'center' }}>
-            Web3 Success Stories
+            What We Can Build
           </Typography>
           <Grid container spacing={4}>
-            {projects.map((project, index) => (
-              <Grid size={{ xs: 12, md: 4 }} key={project.name}>
+            {web3Capabilities.map((cap, index) => (
+              <Grid size={{ xs: 12, md: 4 }} key={cap.title}>
                 <Fade in timeout={800 + index * 100}>
                   <Card
                     sx={{
                       height: '100%',
                       borderRadius: '20px',
-                      overflow: 'hidden',
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
                       transition: 'all 0.3s',
                       '&:hover': {
                         transform: 'translateY(-8px)',
-                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.12)',
                       }
                     }}
                   >
-                    <Box
-                      sx={{
-                        height: 200,
-                        background: `url(${project.image})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                      }}
-                    />
-                    <CardContent sx={{ p: 3 }}>
+                    <CardContent sx={{ p: 4 }}>
                       <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
-                        {project.name}
+                        {cap.title}
                       </Typography>
-                      <Typography sx={{ color: 'text.secondary', mb: 3 }}>
-                        {project.description}
+                      <Typography sx={{ color: 'text.secondary' }}>
+                        {cap.description}
                       </Typography>
-                      <Grid container spacing={1}>
-                        {Object.entries(project.metrics).map(([key, value]) => (
-                          <Grid size={4} key={key}>
-                            <Stack alignItems="center">
-                              <Typography sx={{ fontWeight: 700, color: '#0066FF' }}>
-                                {value}
-                              </Typography>
-                              <Typography sx={{ fontSize: '0.8rem', color: 'text.secondary', textTransform: 'capitalize' }}>
-                                {key}
-                              </Typography>
-                            </Stack>
-                          </Grid>
-                        ))}
-                      </Grid>
                     </CardContent>
                   </Card>
                 </Fade>

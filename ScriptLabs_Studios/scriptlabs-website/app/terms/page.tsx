@@ -137,9 +137,7 @@ export default function TermsPage() {
             <Typography>
               For questions about these Terms of Service, contact us at:
               <br />
-              Email: legal@scriptlabs.com
-              <br />
-              Address: 123 Innovation Drive, San Francisco, CA 94105
+              Email: support@scriptstudio8.com
             </Typography>
           </Box>
         </Stack>

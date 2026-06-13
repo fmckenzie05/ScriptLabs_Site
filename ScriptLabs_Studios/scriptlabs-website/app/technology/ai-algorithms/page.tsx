@@ -33,10 +33,10 @@ const algorithms = [
 ]
 
 const benchmarks = [
-  { metric: 'Processing Speed', value: '10ms', comparison: '5x faster than industry average' },
-  { metric: 'Model Accuracy', value: '98.5%', comparison: 'State-of-the-art performance' },
-  { metric: 'Scalability', value: '1M+ req/s', comparison: 'Enterprise-grade infrastructure' },
-  { metric: 'Energy Efficiency', value: '60% less', comparison: 'Optimized for sustainability' },
+  { metric: 'Processing Speed', value: 'Low latency', comparison: 'Optimized inference pipelines' },
+  { metric: 'Model Quality', value: 'High accuracy', comparison: 'Fine-tuned for your domain' },
+  { metric: 'Scalability', value: 'Cloud-native', comparison: 'Built to scale with demand' },
+  { metric: 'Energy Efficiency', value: 'Optimized', comparison: 'Efficient model architectures' },
 ]
 
 export default function AIAlgorithmsPage() {

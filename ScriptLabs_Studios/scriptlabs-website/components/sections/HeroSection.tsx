@@ -3,14 +3,12 @@
 import Link from 'next/link'
 import { ArrowRight, Sparkles, Code2, Cpu, Globe } from 'lucide-react'
 import { useState, useEffect } from 'react'
-import { 
-  Box, 
-  Typography, 
-  Button, 
-  Container, 
-  Grid, 
-  Card, 
-  CardContent, 
+import {
+  Box,
+  Typography,
+  Button,
+  Container,
+  Grid,
   Chip,
   Stack,
   useTheme
@@ -21,7 +19,7 @@ const technologies = ['React', 'Next.js', 'AI/ML', 'Web3', 'Flutter', 'Node.js',
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0)
   const theme = useTheme()
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % technologies.length)
@@ -79,7 +77,7 @@ export default function HeroSection() {
         {/* Badge */}
         <Chip
           icon={<Sparkles size={16} />}
-          label="AI-Powered Development Studio"
+          label="Software Development Studio"
           sx={{
             mb: 4,
             px: 2,
@@ -124,7 +122,7 @@ export default function HeroSection() {
           <Typography variant="h4" sx={{ color: 'grey.300', fontWeight: 400 }}>
             We transform your ideas into powerful
           </Typography>
-          
+
           <Box sx={{ height: 60, position: 'relative', display: 'flex', alignItems: 'center' }}>
             {technologies.map((tech, index) => (
               <Typography
@@ -145,7 +143,7 @@ export default function HeroSection() {
               </Typography>
             ))}
           </Box>
-          
+
           <Typography variant="h4" sx={{ color: 'grey.300', fontWeight: 400 }}>
             applications across web, mobile, and blockchain platforms
           </Typography>
@@ -159,7 +157,7 @@ export default function HeroSection() {
             variant="contained"
             size="large"
             endIcon={<ArrowRight size={20} />}
-            sx={{ 
+            sx={{
               fontSize: '1.1rem',
               py: 1.5,
               px: 4,
@@ -174,7 +172,7 @@ export default function HeroSection() {
             variant="outlined"
             size="large"
             startIcon={<Sparkles size={20} />}
-            sx={{ 
+            sx={{
               fontSize: '1.1rem',
               py: 1.5,
               px: 4,
@@ -191,45 +189,6 @@ export default function HeroSection() {
             See AI Demo
           </Button>
         </Stack>
-
-        {/* Stats */}
-        <Grid container spacing={4} justifyContent="center">
-          {[
-            { value: '150+', label: 'Projects Delivered', color: '#0066FF' },
-            { value: '50+', label: 'AI Models Deployed', color: '#6B46C1' },
-            { value: '99.9%', label: 'Uptime Guaranteed', color: '#10B981' },
-          ].map((stat, index) => (
-            <Grid size={{ xs: 12, sm: 4 }} key={index}>
-              <Card 
-                elevation={0}
-                sx={{ 
-                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                  backdropFilter: 'blur(10px)',
-                  border: `1px solid rgba(255, 255, 255, 0.1)`,
-                  textAlign: 'center',
-                  py: 3,
-                }}
-              >
-                <CardContent>
-                  <Typography 
-                    variant="h3" 
-                    sx={{ 
-                      color: stat.color, 
-                      fontWeight: 800, 
-                      mb: 1,
-                      textShadow: `0 0 20px ${stat.color}30`,
-                    }}
-                  >
-                    {stat.value}
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: 'grey.400' }}>
-                    {stat.label}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
 
         {/* Floating tech icons */}
         <Box sx={{ position: 'absolute', bottom: 40, left: 40, opacity: 0.2, animation: 'float 6s ease-in-out infinite' }}>

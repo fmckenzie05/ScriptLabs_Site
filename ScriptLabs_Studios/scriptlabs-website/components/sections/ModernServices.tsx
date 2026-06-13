@@ -3,13 +3,13 @@
 import Link from 'next/link'
 import { Globe, Smartphone, Box, Sparkles, Users, ArrowRight, ExternalLink } from 'lucide-react'
 import { useState } from 'react'
-import { 
-  Container, 
-  Typography, 
-  Grid, 
-  Card, 
-  CardContent, 
-  Button, 
+import {
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Button,
   Stack,
   Box as MuiBox,
   Chip,
@@ -21,48 +21,43 @@ import {
 const services = [
   {
     title: 'Web Development',
-    description: 'Revolutionary web applications that push the boundaries of what\'s possible',
+    description: 'Modern web applications built with the latest frameworks and best practices',
     icon: Globe,
     href: '/services/web-development',
     gradient: 'linear-gradient(135deg, #0066FF 0%, #4FC3F7 100%)',
     features: ['Next.js & React', 'AI Integration', 'Real-time Features'],
-    stats: { projects: '150+', satisfaction: '99%' }
   },
   {
     title: 'Mobile Development',
-    description: 'Native and cross-platform apps that users absolutely love',
+    description: 'Native and cross-platform apps that users love',
     icon: Smartphone,
     href: '/services/mobile-development',
     gradient: 'linear-gradient(135deg, #6B46C1 0%, #9C27B0 100%)',
     features: ['Flutter & React Native', 'iOS & Android', 'AI-Powered UX'],
-    stats: { projects: '80+', satisfaction: '98%' }
   },
   {
     title: 'Web3 & Blockchain',
-    description: 'Decentralized solutions that define the future of technology',
+    description: 'Decentralized solutions for the next generation of the web',
     icon: Box,
     href: '/services/web3-blockchain',
     gradient: 'linear-gradient(135deg, #10B981 0%, #00C851 100%)',
     features: ['Smart Contracts', 'DeFi Platforms', 'NFT Solutions'],
-    stats: { projects: '45+', satisfaction: '100%' }
   },
   {
     title: 'AI-Powered SaaS',
-    description: 'Intelligent platforms powered by our proprietary AI algorithms',
+    description: 'Intelligent platforms powered by modern AI and machine learning',
     icon: Sparkles,
     href: '/services/ai-saas',
     gradient: 'linear-gradient(135deg, #F59E0B 0%, #FF6B35 100%)',
     features: ['Custom AI Models', 'Machine Learning', 'Predictive Analytics'],
-    stats: { models: '50+', accuracy: '97%' }
   },
   {
     title: 'Strategic Consulting',
-    description: 'Technology leadership and architectural guidance for scale',
+    description: 'Technology guidance and architectural planning for your projects',
     icon: Users,
     href: '/services/consulting',
     gradient: 'linear-gradient(135deg, #EC4899 0%, #BE185D 100%)',
-    features: ['Tech Strategy', 'Team Training', 'Architecture Review'],
-    stats: { clients: '200+', growth: '300%' }
+    features: ['Tech Strategy', 'Architecture Review', 'Team Training'],
   },
 ]
 
@@ -70,9 +65,9 @@ export default function ModernServices() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <MuiBox 
-      sx={{ 
-        py: 12, 
+    <MuiBox
+      sx={{
+        py: 12,
         background: 'linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%)',
         position: 'relative',
         overflow: 'hidden',
@@ -107,7 +102,7 @@ export default function ModernServices() {
               }}
             />
           </Fade>
-          
+
           <Slide direction="up" in timeout={800}>
             <Typography
               variant="h2"
@@ -123,10 +118,10 @@ export default function ModernServices() {
                 maxWidth: '800px',
               }}
             >
-              Services That Transform Industries
+              What We Build
             </Typography>
           </Slide>
-          
+
           <Fade in timeout={1000}>
             <Typography
               sx={{
@@ -137,8 +132,8 @@ export default function ModernServices() {
                 fontWeight: 400,
               }}
             >
-              We combine cutting-edge technology with creative innovation to deliver 
-              solutions that don't just meet expectations—they exceed them.
+              We combine cutting-edge technology with creative innovation to deliver
+              solutions that bring your ideas to life.
             </Typography>
           </Fade>
         </Stack>
@@ -164,8 +159,8 @@ export default function ModernServices() {
                     overflow: 'hidden',
                     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     transform: hoveredIndex === index ? 'translateY(-12px)' : 'translateY(0)',
-                    boxShadow: hoveredIndex === index 
-                      ? '0 25px 50px rgba(0, 0, 0, 0.15)' 
+                    boxShadow: hoveredIndex === index
+                      ? '0 25px 50px rgba(0, 0, 0, 0.15)'
                       : '0 4px 20px rgba(0, 0, 0, 0.08)',
                     '&::before': {
                       content: '""',
@@ -202,11 +197,11 @@ export default function ModernServices() {
                     </MuiBox>
 
                     {/* Title */}
-                    <Typography 
-                      variant="h4" 
-                      sx={{ 
-                        mb: 2, 
-                        fontWeight: 700, 
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        mb: 2,
+                        fontWeight: 700,
                         color: '#0F172A',
                         fontSize: '1.5rem',
                         lineHeight: 1.3,
@@ -214,13 +209,13 @@ export default function ModernServices() {
                     >
                       {service.title}
                     </Typography>
-                    
+
                     {/* Description */}
-                    <Typography 
-                      sx={{ 
-                        mb: 3, 
-                        color: '#64748B', 
-                        lineHeight: 1.6, 
+                    <Typography
+                      sx={{
+                        mb: 3,
+                        color: '#64748B',
+                        lineHeight: 1.6,
                         flexGrow: 1,
                         fontSize: '1rem',
                       }}
@@ -241,9 +236,9 @@ export default function ModernServices() {
                               flexShrink: 0,
                             }}
                           />
-                          <Typography 
-                            sx={{ 
-                              color: '#475569', 
+                          <Typography
+                            sx={{
+                              color: '#475569',
                               fontSize: '0.95rem',
                               fontWeight: 500,
                             }}
@@ -254,40 +249,17 @@ export default function ModernServices() {
                       ))}
                     </Stack>
 
-                    {/* Stats */}
-                    <Stack direction="row" spacing={3} sx={{ mb: 3 }}>
-                      {Object.entries(service.stats).map(([key, value]) => (
-                        <Stack key={key} alignItems="center">
-                          <Typography 
-                            sx={{ 
-                              fontWeight: 800, 
-                              fontSize: '1.2rem',
-                              background: service.gradient,
-                              backgroundClip: 'text',
-                              WebkitBackgroundClip: 'text',
-                              color: 'transparent',
-                            }}
-                          >
-                            {value}
-                          </Typography>
-                          <Typography sx={{ fontSize: '0.8rem', color: '#94A3B8', textTransform: 'capitalize' }}>
-                            {key}
-                          </Typography>
-                        </Stack>
-                      ))}
-                    </Stack>
-
                     {/* Learn More */}
-                    <Stack 
-                      direction="row" 
-                      alignItems="center" 
+                    <Stack
+                      direction="row"
+                      alignItems="center"
                       justifyContent="space-between"
                       sx={{ mt: 'auto' }}
                     >
                       <Stack direction="row" alignItems="center" spacing={1}>
-                        <Typography 
-                          sx={{ 
-                            fontWeight: 600, 
+                        <Typography
+                          sx={{
+                            fontWeight: 600,
                             background: service.gradient,
                             backgroundClip: 'text',
                             WebkitBackgroundClip: 'text',
@@ -296,16 +268,16 @@ export default function ModernServices() {
                         >
                           Learn More
                         </Typography>
-                        <ArrowRight 
-                          size={16} 
-                          style={{ 
+                        <ArrowRight
+                          size={16}
+                          style={{
                             color: hoveredIndex === index ? '#0066FF' : '#94A3B8',
                             transform: hoveredIndex === index ? 'translateX(4px)' : 'translateX(0)',
                             transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                          }} 
+                          }}
                         />
                       </Stack>
-                      
+
                       <IconButton
                         size="small"
                         sx={{
@@ -338,7 +310,7 @@ export default function ModernServices() {
               variant="contained"
               size="large"
               endIcon={<ArrowRight size={20} />}
-              sx={{ 
+              sx={{
                 py: 2,
                 px: 6,
                 fontSize: '1.1rem',
