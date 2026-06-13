@@ -20,9 +20,13 @@
     "@radix-ui/react-dropdown-menu": "^2.1.15",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "autoprefixer": "^10.4.21",
+    "bcryptjs": "^3.0.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.536.0",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.17.1",
     "next": "15.4.5",
     "postcss": "^8.5.6",
     "react": "19.1.0",
@@ -31,6 +35,8 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

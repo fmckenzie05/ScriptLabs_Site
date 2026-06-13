@@ -28,6 +28,7 @@ const footerNavigation = {
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Cookie Policy', href: '/cookies' },
     { name: 'Security', href: '/security' },
+    { name: 'Pricing', href: '/pricing' },
   ],
 }
 

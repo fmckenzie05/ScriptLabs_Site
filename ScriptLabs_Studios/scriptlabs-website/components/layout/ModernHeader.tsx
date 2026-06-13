@@ -41,6 +41,7 @@ const navigation = [
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'About', href: '/about' },
   { name: 'Insights', href: '/insights' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 export default function ModernHeader() {
@@ -117,7 +118,7 @@ export default function ModernHeader() {
         <Stack spacing={2} sx={{ pt: 2 }}>
           <Button
             component={Link}
-            href="/contact/demo"
+            href="/signin"
             variant="outlined"
             sx={{
               borderRadius: '50px',
@@ -130,11 +131,11 @@ export default function ModernHeader() {
               }
             }}
           >
-            Request Demo
+            Sign In
           </Button>
           <Button
             component={Link}
-            href="/contact/get-started"
+            href="/signup"
             variant="contained"
             endIcon={<ArrowRight size={18} />}
             sx={{
@@ -144,7 +145,7 @@ export default function ModernHeader() {
               boxShadow: '0 4px 20px rgba(0, 102, 255, 0.3)',
             }}
           >
-            Get Started
+            Sign Up
           </Button>
         </Stack>
       </Stack>
@@ -242,7 +243,7 @@ export default function ModernHeader() {
             <Stack direction="row" spacing={2} sx={{ display: { xs: 'none', md: 'flex' }, ml: 4 }}>
               <Button
                 component={Link}
-                href="/contact/demo"
+                href="/signin"
                 variant="outlined"
                 sx={{
                   borderRadius: '50px',
@@ -260,11 +261,11 @@ export default function ModernHeader() {
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}
               >
-                Request Demo
+                Sign In
               </Button>
               <Button
                 component={Link}
-                href="/contact/get-started"
+                href="/signup"
                 variant="contained"
                 endIcon={<ArrowRight size={18} />}
                 sx={{
@@ -281,7 +282,7 @@ export default function ModernHeader() {
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}
               >
-                Get Started
+                Sign Up
               </Button>
             </Stack>
 

@@ -63,7 +63,7 @@ const stats = [
   { number: '99.9%', label: 'Uptime Guarantee' },
 ]
 
-const colorClasses = {
+const colorClasses: Record<string, string> = {
   blue: 'from-blue-500 to-blue-600',
   purple: 'from-purple-500 to-purple-600',
   green: 'from-green-500 to-green-600',
